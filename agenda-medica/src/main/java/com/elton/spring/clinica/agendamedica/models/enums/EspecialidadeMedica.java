@@ -1,4 +1,4 @@
-package com.elton.spring.clinica.models.enums;
+package com.elton.spring.clinica.agendamedica.models.enums;
 
 public enum EspecialidadeMedica {
 

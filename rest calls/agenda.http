@@ -1,2 +1,20 @@
-###
-GET http://localhost:8080/hello
+
+### Cadastrar médico
+POST {{base-url}}/medicos
+content-type: application/json
+
+{
+    "nome" : "Elton",
+    "email": "elton@email.com",
+    "crm": "123456",
+    "especialidade" : "ORTOPEDIA",
+    "endereco": {
+        "logradouro": "rua da clinica",
+        "bairro": "bairro da clinica",
+        "cep": "20010731",
+        "cidade": "uma cidade",
+        "estado": "mg",
+        "numero": "1",
+        "complemento": "bloco 01"
+    }
+}

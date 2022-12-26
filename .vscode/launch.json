@@ -1,0 +1,12 @@
+{
+    "configurations": [
+        
+        {
+            "type": "java",
+            "name": "Launch Med",
+            "request": "launch",
+            "mainClass": "com.elton.spring.clinica.agendamedica.AgendaMedicaApplication",
+            "projectName": "agenda-medica"
+        }
+    ]
+}

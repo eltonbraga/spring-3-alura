@@ -1,0 +1,15 @@
+{
+    "maven.view": "hierarchical",
+    "maven.executable.preferMavenWrapper": false,    
+    "rest-client.environmentVariables": {
+        "$shared": {
+        },
+        "local": {
+            "base-url": "http://localhost:8080",
+        },
+        "graphBeta": {
+            "version": "beta"
+        },
+    },
+    "java.configuration.updateBuildConfiguration": "interactive"
+}

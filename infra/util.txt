@@ -1,0 +1,13 @@
+## Iniciando docker compose com mysql para a agenda medica
+docker compose -f docker-compose-agenda-medica.yml up -d
+docker compose -f infra/docker-compose-agenda-medica.yml up -d
+
+## logando no adminer
+Servidor: mysqlsrv (nome do container mysql - mesmo local onde está rodando o container adminer)
+usuário: root
+senha: MySql2022!
+base dados de médico: med_api
+
+
+## Limpando configurações java do vs-code
+ctrl + shift + p -> Java: clean java language server workspace

@@ -33,6 +33,8 @@ public class Medico {
 
     private String crm;
 
+    private String telefone;
+
     @Enumerated(EnumType.STRING)
     private EspecialidadeMedica especialidade;
 

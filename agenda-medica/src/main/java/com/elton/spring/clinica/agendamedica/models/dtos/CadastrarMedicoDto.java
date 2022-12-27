@@ -1,15 +1,31 @@
-package com.elton.spring.clinica.agendamedica.controllers.dto;
+package com.elton.spring.clinica.agendamedica.models.dtos;
 
 import com.elton.spring.clinica.agendamedica.models.Endereco;
 import com.elton.spring.clinica.agendamedica.models.Medico;
 import com.elton.spring.clinica.agendamedica.models.enums.EspecialidadeMedica;
 
-public record CadastrarMedicoDto(String nome, 
-                            String email, 
-                            String telefone,
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
+
+public record CadastrarMedicoDto(
+                            @NotBlank
+                            String nome,
+                            @NotBlank
+                            @Email 
+                            String email,
+                            @NotBlank
+                            @Pattern(regexp = "\\d{4,6}")
                             String crm, 
+                            @NotNull
                             EspecialidadeMedica especialidade, 
-                            EnderecoDto endereco
+                            @NotNull
+                            @Valid
+                            EnderecoDto endereco,
+                            @NotBlank
+                            String telefone
                         ){
 
         public Medico toMedico(){
@@ -25,7 +41,8 @@ public record CadastrarMedicoDto(String nome,
             return new Medico(null, 
                                 this.nome, 
                                 this.email,
-                                this.crm, 
+                                this.crm,
+                                this.telefone, 
                                 this.especialidade, 
                                 endereco);
         }

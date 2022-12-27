@@ -4,9 +4,10 @@ POST {{base-url}}/medicos
 content-type: application/json
 
 {
-    "nome" : "Elton",
-    "email": "elton@email.com",
-    "crm": "123456",
+    "nome" : "Elton 02",
+    "email": "elton02@email.com",
+    "crm": "123457",
+    "telefone": "1234",
     "especialidade" : "ORTOPEDIA",
     "endereco": {
         "logradouro": "rua da clinica",
@@ -18,3 +19,11 @@ content-type: application/json
         "complemento": "bloco 01"
     }
 }
+
+### Listar médicos
+GET {{base-url}}/medicos
+content-type: application/json
+
+
+### Listar médicos usando dados de paginação
+GET {{base-url}}/medicos?page=0&size=1&sort=nome,desc

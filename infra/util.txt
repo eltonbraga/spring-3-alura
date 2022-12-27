@@ -11,3 +11,8 @@ base dados de médico: med_api
 
 ## Limpando configurações java do vs-code
 ctrl + shift + p -> Java: clean java language server workspace
+
+## outra forma de trocar o default page di spring
+spring.data.web.pageable.page-parameter=pagina
+spring.data.web.pageable.size-parameter=tamanho
+spring.data.web.sort.sort-parameter=ordem

@@ -16,3 +16,10 @@ ctrl + shift + p -> Java: clean java language server workspace
 spring.data.web.pageable.page-parameter=pagina
 spring.data.web.pageable.size-parameter=tamanho
 spring.data.web.sort.sort-parameter=ordem
+
+## Hash da senha "elton" gerada com Bcrypt
+$2a$10$PQD2Uxjq.zVsCwHXlvr6YO8FTcU6KUaWMjTgIc3d2nliTAHaQ5nlS
+
+INSERT INTO `usuarios` (login, senha) values (
+    'elton@email.com',
+    '$2a$10$PQD2Uxjq.zVsCwHXlvr6YO8FTcU6KUaWMjTgIc3d2nliTAHaQ5nlS')

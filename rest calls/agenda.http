@@ -31,3 +31,12 @@ GET {{base-url}}/medicos?page=0&size=1&sort=nome,desc
 ### Inativar médico
 DELETE {{base-url}}/medicos/2
 content-type: application/json
+
+### Login
+POST {{base-url}}/login
+content-type: application/json
+
+{
+    "login" : "elton@email.com",
+    "senha": "elton"
+}

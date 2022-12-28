@@ -27,3 +27,7 @@ content-type: application/json
 
 ### Listar médicos usando dados de paginação
 GET {{base-url}}/medicos?page=0&size=1&sort=nome,desc
+
+### Inativar médico
+DELETE {{base-url}}/medicos/2
+content-type: application/json

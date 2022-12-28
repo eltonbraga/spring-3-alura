@@ -35,10 +35,16 @@ public class Medico {
 
     private String telefone;
 
+    private boolean active = true;
+
     @Enumerated(EnumType.STRING)
     private EspecialidadeMedica especialidade;
 
     @Embedded
     private Endereco endereco;
+
+    public void desativar(){
+        this.active = false;
+    }
 
 }

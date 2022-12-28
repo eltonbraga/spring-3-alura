@@ -10,6 +10,7 @@ import com.elton.spring.clinica.agendamedica.models.dtos.CadastrarMedicoDto;
 import com.elton.spring.clinica.agendamedica.models.dtos.ListarMedicosDto;
 import com.elton.spring.clinica.agendamedica.models.repositories.MedicoRepository;
 
+
 @Service
 public class MedicoService {
     
@@ -26,8 +27,14 @@ public class MedicoService {
 
     @Transactional(readOnly = true)
     public Page<ListarMedicosDto> listar(final Pageable paginacao){
-        final Page<Medico> medicos = repository.findAll(paginacao);
+        final Page<Medico> medicos = repository.findAllByActiveTrue(paginacao);
         return medicos.map(ListarMedicosDto::new);
+    }
+
+    @Transactional
+    public void inativar(final Long id) {
+        final Medico medico = repository.getReferenceById(id);     
+        medico.desativar();
     }
    
 }

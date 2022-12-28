@@ -43,6 +43,7 @@ public record CadastrarMedicoDto(
                                 this.email,
                                 this.crm,
                                 this.telefone, 
+                                true,
                                 this.especialidade, 
                                 endereco);
         }

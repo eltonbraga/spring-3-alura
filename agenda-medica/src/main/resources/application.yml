@@ -8,3 +8,8 @@ spring:
         properties:
             hibernate:
                 format_sql: true
+
+server:
+    error:
+        # remove stack trace para retornos de erro da api
+        include-stacktrace: never

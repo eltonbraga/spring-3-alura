@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
+import  org.springframework.http.HttpStatus;
 
 import com.elton.spring.clinica.agendamedica.models.dtos.CadastrarMedicoDto;
 import com.elton.spring.clinica.agendamedica.models.dtos.ListarMedicosDto;
@@ -28,6 +30,7 @@ public class MedicoController {
     }
 
     @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
     public void cadastrar(@RequestBody @Valid CadastrarMedicoDto cadastrarMedico){
         service.cadastrar(cadastrarMedico);   
     }
@@ -38,6 +41,7 @@ public class MedicoController {
     }
 
     @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     public void inativar(@PathVariable final Long id){
         service.inativar(id);
     }

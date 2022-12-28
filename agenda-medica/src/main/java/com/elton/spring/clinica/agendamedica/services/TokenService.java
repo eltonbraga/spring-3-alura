@@ -21,7 +21,6 @@ public class TokenService {
     @Setter
     private String secret;
 
-
     public String gerarJwtToken(final Usuario usuario){
         try {
             return JWT.create()

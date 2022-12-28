@@ -1,7 +1,19 @@
+### Login
+POST {{base-url}}/login
+content-type: application/json
+
+{
+    "login" : "elton@email.com",
+    "senha": "elton"
+}
+
+######
+@token=Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbHRvbkBlbWFpbC5jb20iLCJpc3MiOiJBUEkgTWVkaWNhIiwiaWQiOjIsImV4cCI6MTY3MjI2OTM4MX0.SA7ziVh8q82-3k7-_Gj1mS-lny7c10Ky-bEGVBbqQ1w
 
 ### Cadastrar médico
 POST {{base-url}}/medicos
 content-type: application/json
+Authorization: {{token}}
 
 {
     "nome" : "Elton 02",
@@ -23,20 +35,14 @@ content-type: application/json
 ### Listar médicos
 GET {{base-url}}/medicos
 content-type: application/json
-
+Authorization: {{token}}
 
 ### Listar médicos usando dados de paginação
 GET {{base-url}}/medicos?page=0&size=1&sort=nome,desc
+Authorization: {{token}}
 
 ### Inativar médico
 DELETE {{base-url}}/medicos/2
 content-type: application/json
+Authorization: {{token}}
 
-### Login
-POST {{base-url}}/login
-content-type: application/json
-
-{
-    "login" : "elton@email.com",
-    "senha": "elton"
-}

@@ -1,6 +1,8 @@
 package com.elton.spring.clinica.agendamedica.controllers;
 
+import com.elton.spring.clinica.agendamedica.models.Usuario;
 import com.elton.spring.clinica.agendamedica.models.dtos.LoginDto;
+import com.elton.spring.clinica.agendamedica.services.TokenService;
 import jakarta.validation.Valid;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -15,14 +17,20 @@ public class AutenticacaoController {
 
     private final AuthenticationManager manager;
 
-    public AutenticacaoController(final AuthenticationManager manager) {
+    private final TokenService tokenService;
+
+    public AutenticacaoController(
+            final AuthenticationManager manager,
+            final TokenService tokenService) {
         this.manager = manager;
+        this.tokenService = tokenService;
     }
 
     @PostMapping
-    public void login(@RequestBody @Valid LoginDto dados){
+    public String login(@RequestBody @Valid LoginDto dados){
         final var token = new UsernamePasswordAuthenticationToken(dados.login(), dados.senha());
+        final var auth = manager.authenticate(token);
 
-        manager.authenticate(token);
+        return tokenService.gerarJwtToken((Usuario) auth.getPrincipal());
     }
 }

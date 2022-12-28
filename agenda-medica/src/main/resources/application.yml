@@ -13,3 +13,8 @@ server:
     error:
         # remove stack trace para retornos de erro da api
         include-stacktrace: never
+
+api:
+    security:
+        token:
+            secret: ${JWT_SECRET:segredo}

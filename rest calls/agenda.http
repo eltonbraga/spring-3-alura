@@ -8,7 +8,7 @@ content-type: application/json
 }
 
 ######
-@token=Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbHRvbkBlbWFpbC5jb20iLCJpc3MiOiJBUEkgTWVkaWNhIiwiaWQiOjIsImV4cCI6MTY3MjI2OTM4MX0.SA7ziVh8q82-3k7-_Gj1mS-lny7c10Ky-bEGVBbqQ1w
+@token=Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbHRvbkBlbWFpbC5jb20iLCJpc3MiOiJBUEkgTWVkaWNhIiwiaWQiOjEsImV4cCI6MTY3MjMyNzE3OH0.sEp2gm8kynT2504AjjIuhXDkH0hD-orIuqnPAlzYvIs
 
 ### Cadastrar médico
 POST {{base-url}}/medicos

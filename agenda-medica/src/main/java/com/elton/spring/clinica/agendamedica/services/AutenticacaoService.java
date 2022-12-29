@@ -1,6 +1,5 @@
 package com.elton.spring.clinica.agendamedica.services;
 
-import com.elton.spring.clinica.agendamedica.models.Usuario;
 import com.elton.spring.clinica.agendamedica.models.repositories.UsuarioRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
